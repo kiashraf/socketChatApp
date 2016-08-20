@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Users</title>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+
+    <h1><%= title %></h1>
+
+    <% if(users.length > 1){ %>
+
+    <h2> Hello ! <%= currentUser.name %> , You can chat with following people </h2>
+
+    <div class="roomsListDiv container-fluid">
+        <ul class="roomsList" id="roomsListUL">
+            <!-- Loop list items here -->
+
+        </ul>
+    </div>
+
+    <% }else{ %>
+    <h2> Hello ! <%= currentUser.name %> , There is no one Online ,<label class="alert-link"> <a href="#">Please
+                Refresh </a></label></h2>
+
+    <% } %>
+
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io('http://localhost:3000/track');
+    let renderOnlineUsers = function (OnLineUsers) {
+        let roomsListDiv = $('#roomsListUL');
+        let listStr = '';
+        for (let cat of OnLineUsers) {
+            listStr += `<a href="/socket/${cat._id}"><li class="list-group-item">${cat.name}</li></a>`;
+        }
+        roomsListDiv.html('').append(listStr);
+    }
+
+
+
+    socket.emit('getOnlineUsers');
+
+
+
+    socket.on('onlineUsersList', function (OnLineUsers) {
+        renderOnlineUsers(OnLineUsers);
+    });
+
+
+    console.log('Hello COnsole');
+
+</script>
+</body>
+</html>

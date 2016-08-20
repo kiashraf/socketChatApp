@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+        <% if(message.length > 0){ %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <% if(errors){ %>
+        <% for(var i = 0; i < errors.length ;i++){ %>
+        <div class="alert alert-danger"><%= errors[i].msg %></div>
+        <% } %>
+        <% } %>
+        <form action="/login" method="post">
+
+            <fieldset class="form-group has-success">
+                <label for="formGroupExampleInput">Mobile Number:</label>
+                <input type="tel" class="form-control form-control-success" id="mobile" placeholder="Mobile Number" name="mobile">
+            </fieldset>
+            <fieldset class="form-group has-danger">
+                <label for="formGroupExampleInput2">Password:</label>
+                <input type="password" class="form-control form-control-danger" id="password" placeholder="Password" name="password">
+            </fieldset>
+
+            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+    </div>
+</div>
+</body>
+
+</html>

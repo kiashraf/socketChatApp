@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+
+        <h1><span class="fa fa-sign-in"></span> Sign up</h1>
+        <!--If there is an error show that error-->
+        <% if(message.length > 0){ %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <% if(errors){ %>
+        <% for(var i = 0; i < errors.length ;i++){ %>
+        <div class="alert alert-danger"><%= errors[i].msg %></div>
+        <% } %>
+        <% } %>
+
+        <form action="/signup" method="post">
+            <div class="form-group ">
+                <label class="form-control-label" for="inputWarning1">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+            </div>
+            <fieldset class="form-group">
+                <label for="formGroupExampleInput">Mobile Number:</label>
+                <input type="tel" class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" pattern="[789][0-9]{9}" required>
+                <!---->
+
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="formGroupExampleInput2">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="formGroupExampleInput2">Confirm Password:</label>
+                <input type="password" class="form-control" id="password2" placeholder="Confirm Password"
+                       name="password2" required>
+            </fieldset>
+
+            <button type="submit" class="btn btn-warning btn-lg">Sign up</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login"><b>Login</b></a></p>
+        <p>Or go <a href="/">home</a>.</p>
+    </div>
+</div>
+</body>
+
+</html>
