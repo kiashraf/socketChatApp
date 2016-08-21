@@ -20,7 +20,6 @@ var socket = require('./routes/socket');
 var users = require('./routes/users');
 var groupchat = require('./routes/groupchat');
 
-
 var app = express();
 
 var io = require('socket.io')();

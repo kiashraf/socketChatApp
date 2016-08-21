@@ -8,17 +8,24 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 </head>
 <style>
-    body {
+
+    .container {
         margin-top: 100px;
     }
 
+    #logOutButton{
+        position: fixed;
+        right: 10px;
+
+    }
 </style>
 <body>
+<button class="btn btn-info" id="logOutButton"> <a href="/logout">Log out </a></button>
 
 <div class="container">
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <!--<div class="panel panel-info" id="chat">-->
                 <div class="panel-heading">You are in chat room </div>
@@ -82,7 +89,6 @@
 
 
     })
-
 
 </script>
 

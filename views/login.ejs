@@ -1,15 +1,28 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
-        body        { padding-top:80px; }
+        body {
+            padding-top: 80px;
+        }
+
+        #welcomeButton {
+            left: 0px;
+        }
+
+
     </style>
+
+
 </head>
 
 <body>
+
+<button class="btn btn-danger btn-block btn-lg" id="welcomeButton"><strong>Welcome to Socket.Io chat
+        Application </strong></button>
 
 <div class="container">
 
@@ -25,15 +38,18 @@
         <div class="alert alert-danger"><%= errors[i].msg %></div>
         <% } %>
         <% } %>
-        <form action="/login" method="post">
+        <form action="/login" method="post" >
 
             <fieldset class="form-group has-success">
                 <label for="formGroupExampleInput">Mobile Number:</label>
-                <input type="tel" class="form-control form-control-success" id="mobile" placeholder="Mobile Number" name="mobile">
+                <input type="tel" class="form-control form-control-success" id="mobile"
+                       placeholder="Mobile Number" name="mobile" required autocomplete="false">
             </fieldset>
+
             <fieldset class="form-group has-danger">
                 <label for="formGroupExampleInput2">Password:</label>
-                <input type="password" class="form-control form-control-danger" id="password" placeholder="Password" name="password">
+                <input type="password" class="form-control form-control-danger" id="password" placeholder="Password"
+                       name="password" required>
             </fieldset>
 
             <button type="submit" class="btn btn-warning btn-lg">Login</button>
@@ -41,8 +57,8 @@
 
         <hr>
 
-        <p>Need an account? <a href="/signup">Signup</a></p>
-        <p>Or go <a href="/">home</a>.</p>
+        <p>Need an account? <a href="/signup"><strong>Signup</strong></a></p>
+
     </div>
 </div>
 </body>

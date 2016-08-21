@@ -12,19 +12,31 @@
         margin-top: 100px;
     }
 
+    #logOutButton{
+        
+        position: fixed;
+        
+        right: 10px;
+    }
+    #groupChatButton{
+     margin-top: 30px;
+    }
+    
 </style>
 <body>
-<button class="btn  btn-danger btn-block"> <a href="/groupchat"><strong>Click Here </strong> to join Group Chat </a></button>
+<a href="/groupchat"><button class="btn  btn-danger btn-block btn-lg" id="groupChatButton"> <strong>Click Here </strong> to join Group Chat </button></a>
+<br>
+
+<button class="btn btn-info" id="logOutButton"> <a href="/logout">Log out </a></button>
 
 <div class="container">
 
 
     <div class="row">
 
-
-        <div class="col-md-4">
+    <div class="col-md-4">
             <div class="well">
-                <h3 class=" glyphicon glyphicon-comment"> Online Users </h3>
+                <h3 > <span class=" glyphicon glyphicon-comment">    </span> Online Users </h3>
 
                 <h3> Hello! <span><strong> <%= currentUser.name %>  </strong></span>, You can chat with following people
                 </h3>

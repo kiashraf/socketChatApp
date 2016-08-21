@@ -33,11 +33,12 @@
         <form action="/signup" method="post">
             <div class="form-group ">
                 <label class="form-control-label" for="inputWarning1">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required autocomplete="false">
             </div>
             <fieldset class="form-group">
                 <label for="formGroupExampleInput">Mobile Number:</label>
-                <input type="tel" class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" pattern="[789][0-9]{9}" required>
+                <input type="tel" class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" pattern="[789][0-9]{9}"
+                       required autocomplete="false">
                 <!---->
 
             </fieldset>
