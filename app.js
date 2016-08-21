@@ -18,6 +18,8 @@ var connection = require('./config/database');
 
 var socket = require('./routes/socket');
 var users = require('./routes/users');
+var groupchat = require('./routes/groupchat');
+
 
 var app = express();
 
@@ -54,7 +56,7 @@ var sessionMiddleware = session({
     secret: 'keyboardkafhlfaflhfdafcat',
     resave: false,
     saveUninitialized: true,
-    httpOnly: true,
+    httpOnly: true
     // cookie: {secure: true}
 });
 
@@ -93,6 +95,7 @@ require('./routes/index')(app, passport);
 //app.use('/', routes);
 app.use('/socket', socket);
 app.use('/users', users);
+app.use('/groupchat', groupchat);
 
 
 /*
@@ -122,6 +125,17 @@ io.of('/track').on('connection', function (socket) {
 
 });
 
+io.of('/groupchat').on('connection', function (socket) {
+
+
+    socket.on('client message', function (data) {
+
+        io.of('/groupchat').emit('server message', data);
+
+    });
+
+
+});
 
 io.of('/chat').on('connection', function (socket) {
 
@@ -187,6 +201,8 @@ io.of('/chat').on('connection', function (socket) {
         // socket.join(data.to);
         //  socket.to(data.to).emit('server message', data.msg);
         socket.emit('server message', data);
+
+        //socket.broadcast.emit('server message', data);
         io.of('/chat').to(data.to).emit('server message', data);
 
     });
