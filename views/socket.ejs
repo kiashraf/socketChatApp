@@ -128,7 +128,8 @@
         });
 
         socket.on('server message', function (data) {
-            $chatNew.append('<li class="list-group-item"> <strong > ' + data.from + '</strong>' + ' : ' + data.msg + '</li>');
+            $chatNew.append('<li class="list-group-item"> <strong > ' + data.from + '</strong>' + ' : ' + data.msg +
+                    '<br> <small class="text-muted "> <span class="glyphicon glyphicon-time"> </span> '+  new Date().toLocaleString() +'</small></li>');
         })
         socket.emit('join', {currentUserId: currentUserId, currentUserName: currentUserName});
 

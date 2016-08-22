@@ -28,7 +28,7 @@ app.io = io;
 
 //connecting with the database
 
-mongoose.connect(connection.url);
+mongoose.connect(connection.dbURI);
 
 require('./config/passport')(passport);
 
@@ -52,11 +52,10 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Setting session Middleware as variable for Sockt.IO
  * */
 var sessionMiddleware = session({
-    secret: 'keyboardkafhlfaflhfdafcat',
+    secret: connection.sessionSecret,
     resave: false,
     saveUninitialized: true,
-    httpOnly: true
-    // cookie: {secure: true}
+
 });
 
 io.use(function (socket, next) {

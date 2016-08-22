@@ -6,5 +6,4 @@ var randomRoomId = function () {
 
 }
 
-
 module.exports.roomId = randomRoomId();
