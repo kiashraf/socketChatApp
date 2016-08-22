@@ -14,6 +14,7 @@ router.get('/', isLoggedIn, function (req, res) {
 
         PORT : config.PORT,
 
+        host : config.host,
         to: UserId,
         currentUser: req.user,
 
@@ -50,7 +51,8 @@ router.get('/:id', isLoggedIn, function (req, res) {
             title: 'Chat ',
             users: connectedUsers,
             currentUser: req.user,
-            PORT : config.PORT
+            PORT : config.PORT,
+            host : config.host
         });
 
 
