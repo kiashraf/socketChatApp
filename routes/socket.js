@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var config = require('../config/database');
 var User = require('../models/user');
 router.get('/', isLoggedIn, function (req, res) {
 
@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, function (req, res) {
     res.render('socket', {
 
         locals: {currentUserId: req.user._id},
+
+        PORT : config.PORT,
 
         to: UserId,
         currentUser: req.user,
@@ -47,7 +49,8 @@ router.get('/:id', isLoggedIn, function (req, res) {
             toUserName: toUser.name,
             title: 'Chat ',
             users: connectedUsers,
-            currentUser: req.user
+            currentUser: req.user,
+            PORT : config.PORT
         });
 
 

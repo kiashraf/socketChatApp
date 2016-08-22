@@ -10,7 +10,8 @@ router.get('/', isLoggedIn, function (req, res) {
 
     res.render('groupchat', {
         title: 'Chat ',
-        currentUser: req.user
+        currentUser: req.user,
+        PORT : config.PORT
     });
 
 

@@ -9,12 +9,14 @@ if(process.env.NODE_ENV === 'production') {
 
     module.exports = {
 
+        PORT : process.env.host || "",
         dbURI: process.env.dbURI,
         sessionSecret: process.env.sessionSecret,
     }
 } else {
     module.exports =  {
 
+        "PORT" : "http://127.0.0.1:3000",
         "dbURI": 'mongodb://127.0.0.1:27017/socketChatApp',
         "sessionSecret": "keyboardkafhlfaflhfdafcat",
 

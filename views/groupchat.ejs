@@ -64,7 +64,7 @@
 <script>
     $(function () {
 
-        var socket = io('http://127.0.0.1:3000/groupchat');
+        var socket = io('<%-PORT%>'+'/groupchat');
         var $messageForm = $('#messageForm');
         var $message = $('#message');
 

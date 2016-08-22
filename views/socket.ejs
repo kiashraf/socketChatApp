@@ -93,7 +93,7 @@
 <script>
     $(function () {
 
-        var socket = io('http://127.0.0.1:3000/chat');
+        var socket = io('<%=PORT%>'+'/chat');
         var $messageForm = $('#messageForm');
         var $message = $('#message');
         var $chat = $('#chat');
