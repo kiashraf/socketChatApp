@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var config = require('../config/database');
 
 
 router.get('/', isLoggedIn, function (req, res) {
