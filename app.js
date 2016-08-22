@@ -113,7 +113,6 @@ io.of('/track').on('connection', function (socket) {
 
 
     socket.on('getOnlineUsers', function (user) {
-
         console.log('A new user has Connected ' + socket.id);
         socket.emit('onlineUsersList', chatUsers);
         socket.broadcast.emit('onlineUsersList', chatUsers);
