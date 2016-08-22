@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a604beab-f3b3-4025-b34c-3ac13cd34750" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.js" afterPath="$PROJECT_DIR$/config/database.js" />
     </list>
     <ignored path="socketChatApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -432,7 +431,7 @@
       <workItem from="1471282077395" duration="27691000" />
       <workItem from="1471546392618" duration="30148000" />
       <workItem from="1471726757158" duration="20401000" />
-      <workItem from="1471814409134" duration="13346000" />
+      <workItem from="1471814409134" duration="13375000" />
     </task>
     <task id="LOCAL-00001" summary="Added group chat functionality">
       <created>1471784468725</created>
@@ -490,11 +489,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471884477804</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="host added to socket chat">
+      <created>1471884515296</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1471884515296</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202391000" />
+    <option name="totallyTimeSpent" value="202420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,7 +512,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1477612" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
