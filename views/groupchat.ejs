@@ -64,7 +64,7 @@
 <script>
     $(function () {
 
-        var socket = io('<%-PORT%>'+'/groupchat');
+        var socket = io('<%- PORT %>'+'/groupchat');
         var $messageForm = $('#messageForm');
         var $message = $('#message');
 
