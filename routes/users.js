@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var config = require('../config/database');
 
 /* GET users listing. */
 
@@ -18,7 +19,8 @@ router.get('/', isLoggedIn, function (req, res, next) {
             locals: {currentUserId: req.user._id},
             roomId: roomId,
             users: connectedUsers,
-            title: 'OnLineUsers'
+            title: 'OnLineUsers',
+            host : config.host
 
         });
     }

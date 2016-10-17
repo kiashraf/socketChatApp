@@ -35,7 +35,9 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
-    var socket = io('http://localhost:3000/track');
+    var socket = io('/track',{
+        transports: ['websocket']
+    });
     let renderOnlineUsers = function (OnLineUsers) {
         let roomsListDiv = $('#roomsListUL');
         let listStr = '';
