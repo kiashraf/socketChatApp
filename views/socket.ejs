@@ -9,7 +9,12 @@
 </head>
 <style>
     .container {
-        margin-top: 100px;
+        margin-top: 8px;
+    }
+    .nav{
+        min-height: 300px;
+        max-height:300px;
+        overflow-y:auto;
     }
 
     #logOutButton{
@@ -58,20 +63,11 @@
             <div class="panel panel-info">
                 <!--<div class="panel panel-info" id="chat">-->
                 <div class="panel-heading">You are chatting with <%= toUserName %> </div>
-                <ul class="list-group" id="chatNew">
+                <ul class="list-group nav" id="chatNew">
 
                 </ul>
                 <!--</div>-->
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br><br>
-                <br>
-                <br><br>
-                <br>
-                <br>
+
                 <form id="messageForm">
                     <div class="panel-footer">
                         <div class="input-group">

@@ -12,7 +12,11 @@
     .container {
         margin-top: 100px;
     }
-
+.nav{
+    max-height: 350px;
+    min-height: 300px;
+    overflow-y: auto;
+}
     #logOutButton{
         position: fixed;
         right: 10px;
@@ -29,20 +33,10 @@
             <div class="panel panel-info">
                 <!--<div class="panel panel-info" id="chat">-->
                 <div class="panel-heading">You are in chat room </div>
-                <ul class="list-group" id="chatNew">
+                <ul class="list-group nav" id="chatNew">
 
                 </ul>
                 <!--</div>-->
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br><br>
-                <br>
-                <br><br>
-                <br>
-                <br>
                 <form id="messageForm">
                     <div class="panel-footer">
                         <div class="input-group">
