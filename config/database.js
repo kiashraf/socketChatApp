@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 
         "host": "http://127.0.0.1:3000",
         "PORT": "http://127.0.0.1:3000",
-        "dbURI": 'mongodb://127.0.0.1:27017/socketChatApp',
+        "dbURI": 'mongodb://127.0.0.1:27017/socketChatApp/zeyn1',
         "sessionSecret": "keyboardkafhlfaflhfdafcat"
 
     }

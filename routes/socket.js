@@ -12,9 +12,9 @@ router.get('/', isLoggedIn, function (req, res) {
 
         locals: {currentUserId: req.user._id},
 
-        PORT : config.PORT,
+        PORT: config.PORT,
 
-        host : config.host,
+        host: config.host,
         to: UserId,
         currentUser: req.user,
 
@@ -32,7 +32,7 @@ router.get('/:id', isLoggedIn, function (req, res) {
     var UserId = req.params.id;
 
     var toUser = '';
-    if (UserId.length ===24) {
+    if (UserId.length === 24) {
         var query = User.findById(UserId);
 
         toUser = query.exec(function (err, user) {
@@ -51,14 +51,14 @@ router.get('/:id', isLoggedIn, function (req, res) {
             title: 'Chat ',
             users: connectedUsers,
             currentUser: req.user,
-            PORT : config.PORT,
-            host : config.host
+            PORT: config.PORT,
+            host: config.host
         });
 
 
     } else {
         res.redirect('/');
-            }
+    }
 
 
 });
